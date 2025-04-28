@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSR Universe Flims - Satyam Singh Rajput</title>
+
+    <!--
+    - favicon
+    -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+    -->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+
+    <!--
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="light-theme">
+    <!-- Contact Modal -->
+    <div id="contactModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+      <div style="background-color: #fff; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative;">
+        <button id="closeModal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
+        <h2 style="text-align: center; margin-bottom: 20px; color: #333">Contact Me</h2>
+        <form id="modalContactForm" style="display: grid; gap: 15px;">
+          <div style="display: flex; flex-direction: column;">
+            <label for="modalName" style="margin-bottom: 5px; font-weight: bold;">Name</label>
+            <input type="text" id="modalName" required style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <label for="modalEmail" style="margin-bottom: 5px; font-weight: bold;">Email</label>
+            <input type="email" id="modalEmail" required style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <label for="modalNumber" style="margin-bottom: 5px; font-weight: bold;">Phone Number</label>
+            <input type="tel" id="modalNumber" required style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <label for="modalMessage" style="margin-bottom: 5px; font-weight: bold;">Message</label>
+            <textarea id="modalMessage" required style="padding: 10px; border: 1px solid #ddd; border-radius: 5px; height: 100px;"></textarea>
+          </div>
+          <button type="submit" style="padding: 12px; background-color: #0066cc; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!--
+    - #HEADER
+    -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#">
+            <img
+              src="./assets/images/IMG_1580x.jpg"
+              alt="Devblog's logo"
+              width="150"
+              height="70"
+              class="logo-light"
+            />
+            <img
+              src="./assets/images/IMG_1580 png.png"
+              alt="Devblog's logo"
+              width="150"
+              height="70"
+              class="logo-dark"
+            />
+          </a>
+
+          <div class="btn-group">
+            <button class="theme-btn theme-btn-mobile light">
+              <ion-icon name="moon" class="moon"></ion-icon>
+              <ion-icon name="sunny" class="sun"></ion-icon>
+            </button>
+
+            <button class="nav-menu-btn">
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="flex-wrapper">
+            <ul class="desktop-nav">
+              <li>
+                <a href="#" class="nav-link">Home</a>
+              </li>
+
+              <li>
+                <a href="#home" class="nav-link">About Me</a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-link" id="contactLink">Contact</a>
+              </li>
+            </ul>
+
+            <button class="theme-btn theme-btn-desktop light">
+              <ion-icon name="moon" class="moon"></ion-icon>
+              <ion-icon name="sunny" class="sun"></ion-icon>
+            </button>
+          </div>
+
+          <div class="mobile-nav">
+            <button class="nav-close-btn">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="wrapper">
+              <p class="h3 nav-title">Main Menu</p>
+
+              <ul>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">About Me</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link" id="mobileContactLink">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="h3 nav-title">Expertise in</p>
+
+              <ul>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Influencer </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Video Creation</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Story Writing</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Video Direction</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!--
+      - #HERO SECTION
+      -->
+      <div class="hero">
+        <div class="container">
+          <div class="left">
+            <h1 class="h1">
+              Hi, I'm <b>Satyam&nbsp;Singh&nbsp;Rajput</b>. <br />Video Creator
+            </h1>
+
+            <p class="h3">
+              Specialized in
+              <abbr title="Acting for Film and Theatre">Acting</abbr>,
+              <abbr title="Creative Filmmaking and Direction">Filmmaking</abbr>,
+              <abbr title="Script and Story Development">Story Writing</abbr>,
+              <abbr title="Social Media Influence and Personal Branding"
+                >Influencer</abbr
+              >, and High-Impact Video Creation
+            </p>
+
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary" id="heroContactLink">Contact Me</a>
+              <a href="home" class="btn btn-secondary">About Me</a>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="pattern-bg"></div>
+            <div class="img-box">
+              <img
+                src="./assets/images/IMG_3592.JPG"
+                alt="Julia Walker"
+                class="hero-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="container">
+          <!--
+          - BLOG SECTION
+          -->
+          <div class="blog">
+            <h2 class="h2">Masterpiece of SSR Universe Films</h2>
+
+
+            <div class="blog-card-group">
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://youtu.be/IhM3vKaYUTQ?si=KFB3wzyJM6hzd1hC">
+                    <img
+                      src="https://img.youtube.com/vi/IhM3vKaYUTQ/0.jpg"
+                      alt="Satyam Singh Rajput YouTube Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://youtu.be/IhM3vKaYUTQ?si=KFB3wzyJM6hzd1hC"
+                      class="h3"
+                    >
+                      SSR Universe Films | Rab Na Kare | Story Of A Gangster |
+                      Durlabh Kashyap | Part-1
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    2,506,890 views |
+                    <time datetime="2022-09-24">Sep 24, 2022</time> | #RabNaKare
+                    #SSRUNIVERSE
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2022-09-24">Sep 24, 2022</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT13M08S">13:08 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://youtu.be/dNBYUFuRF5E">
+                    <img
+                      src="https://img.youtube.com/vi/dNBYUFuRF5E/0.jpg"
+                      alt="Dil Maang Raha Hai Mohlat YouTube Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a href="https://youtu.be/dNBYUFuRF5E" class="h3">
+                      SSR Universe Films | Dil Maang Raha Hai Mohlat | Heart
+                      Touching Love Story
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    1,094,959 views |
+                    <time datetime="2023-07-17">Jul 17, 2023</time>
+                    #HeartTouchingLoveStory
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2023-07-17">Jul 17, 2023</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT10M">11:09 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a
+                    href="https://youtu.be/Yfv1N_tLjao?si=vT62mjkVoqmpzyca&v=Yfv1N_tLjao&feature=youtu.be"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/Yfv1N_tLjao/0.jpg"
+                      alt="Satyam Singh Rajput YouTube Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://youtu.be/Yfv1N_tLjao?si=vT62mjkVoqmpzyca&v=Yfv1N_tLjao&feature=youtu.be"
+                      class="h3"
+                    >
+                      SSR Universe Films | JEHANABAD (THE FINAL DEAL)
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    60,460 views |
+                    <time datetime="2025-04-04">Apr 4, 2025</time> | #shortfilm
+                    #satyamsingh #JehanabadTheFinalDeal
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2025-04-04">Apr 4, 2025</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT10M">16:31 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://www.youtube.com/watch?v=kmCcGiWWGW4">
+                    <img
+                      src="https://img.youtube.com/vi/kmCcGiWWGW4/0.jpg"
+                      alt="Radha Krishna Episode 2 Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://www.youtube.com/watch?v=kmCcGiWWGW4"
+                      class="h3"
+                    >
+                      SSR Universe Films | Radha Krishna ( Episode - 2 )
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    38,915 views |
+                    <time datetime="2024-09-18">Sep 18, 2024</time> |
+                    #SSRUNIVERSE #RadhaKrishna
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2024-09-18">Sep 18, 2024</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT10M">09:09 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://youtu.be/6uM202tqZhY">
+                    <img
+                      src="https://img.youtube.com/vi/6uM202tqZhY/0.jpg"
+                      alt="Satyam Singh Rajput YouTube Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a href="https://youtu.be/6uM202tqZhY" class="h3">
+                      SSR Universe Films | PEHLI DAFA (Acid Attack Love Story)
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    1,309,827 views |
+                    <time datetime="2023-04-30">Apr 30, 2023</time> | #raushan
+                    #SSRUNIVERSE #PehliDafa
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2023-04-30">Apr 30, 2023</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT10M">8:47 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://www.youtube.com/shorts/D0sBh8co8zk">
+                    <img
+                      src="https://img.youtube.com/vi/D0sBh8co8zk/0.jpg"
+                      alt="Bhabhi Devar Comedy Part-3 Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://www.youtube.com/shorts/D0sBh8co8zk"
+                      class="h3"
+                    >
+                      SSR Universe | Bhabhi Devar Comedy Part-3
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    Comedy Short | #satyamsinghrajput #kritisatyam #shortsviral
+                    #trending #couplegoals
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2025-04-25">Apr 25, 2025</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT1M">1 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://www.youtube.com/shorts/xUw7J4yt_38">
+                    <img
+                      src="https://img.youtube.com/vi/xUw7J4yt_38/0.jpg"
+                      alt="Bhabhi Devar Comedy Part-2 Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://www.youtube.com/shorts/xUw7J4yt_38"
+                      class="h3"
+                    >
+                      SSR Universe | Bhabhi Devar Comedy Part-2
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    Comedy Short | #satyamsinghrajput #kritisatyam #shortvideos
+                    #comedy #bhabhidevar #ssr
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2025-04-25">Apr 25, 2025</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT1M">1 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <div class="blog-card-banner">
+                  <a href="https://www.youtube.com/shorts/-gCdNSY7SzY">
+                    <img
+                      src="https://img.youtube.com/vi/-gCdNSY7SzY/0.jpg"
+                      alt="Ladki Mandir Kyun Nahi Aayi Thumbnail"
+                      width="450"
+                      height="600"
+                      class="blog-banner-img"
+                    />
+                  </a>
+                </div>
+
+                <div class="blog-content-wrapper">
+                  <h3>
+                    <a
+                      href="https://www.youtube.com/shorts/-gCdNSY7SzY"
+                      class="h3"
+                    >
+                      SSR Universe | Ladki Mandir Kyun Nahi Aayi?? (Part 8)
+                    </a>
+                  </h3>
+
+                  <p class="views">
+                    Emotional Short | #part8 #acidattackstory #satyamsinghrajput
+                    #shorts #viral #ssr
+                  </p>
+
+                  <div class="wrapper-flex">
+                    <div class="wrapper">
+                      <a href="#" class="h4">Satyam Singh Rajput</a>
+                      <p class="text-sm">
+                        <time datetime="2025-04-25">Apr 25, 2025</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT1M">1 min</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.youtube.com/@universeofssr"
+              target="_blank"
+              class="btn"
+              style="margin-bottom: 15px"
+            >
+              <button class="btn load-more">Load More</button>
+            </a>
+          </div>
+
+          <!--
+          - ASIDE
+          -->
+          <div class="aside">
+            <div class="topics">
+              <h2 class="h2">Expertise in</h2>
+              <a href="#" class="topic-btn">
+                <div class="icon-box">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
+                <p>Acting</p>
+              </a>
+
+              <a href="#" class="topic-btn">
+                <div class="icon-box">
+                  <ion-icon name="camera-outline"></ion-icon>
+                </div>
+                <p>Influencer</p>
+              </a>
+              <a href="#" class="topic-btn">
+                <div class="icon-box">
+                  <ion-icon name="book-outline"></ion-icon>
+                </div>
+                <p>Story Writing</p>
+              </a>
+
+              <a href="#" class="topic-btn">
+                <div class="icon-box">
+                  <ion-icon name="film-outline"></ion-icon>
+                </div>
+                <p>Video Direction</p>
+              </a>
+            </div>
+
+            <div class="tags">
+              <h2 class="h2">Tags</h2>
+
+              <div class="wrapper">
+                <button class="hashtag">#ssruniverfilms</button>
+                <button class="hashtag">#stayamsinghrajput</button>
+                <button class="hashtag">#videocreation</button>
+                <button class="hashtag">#acting</button>
+                <button class="hashtag">#filmmaking</button>
+                <button class="hashtag">#storywriting</button>
+                <button class="hashtag">#influencermarketing</button>
+                <button class="hashtag">#videoshooting</button>
+                <button class="hashtag">#videodirection</button>
+                <button class="hashtag">#highimpactvideos</button>
+              </div>
+            </div>
+
+            <div class="contact" id="contact">
+              <h2 class="h2">Let's Talk</h2>
+
+              <div class="wrapper">
+                <p>
+                  Do you want to learn more about how we can help your company
+                  overcome problems? Let's have a conversation.
+                </p>
+
+                <ul class="social-link">
+                  <li>
+                    <a
+                      href="https://www.instagram.com/satyamsingh_official1?igsh=ZzhmbGcyZ2Jsamxp"
+                      class="icon-box instagram"
+                      target="_blank"
+                    >
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.youtube.com/@universeofssr"
+                      class="icon-box youtube"
+                      target="_blank"
+                    >
+                      <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.instagram.com/ssruniversefilms?igsh=MWc5N28zeWRsOWs1Yw=="
+                      class="icon-box instagram"
+                      target="_blank"
+                    >
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.facebook.com/share/1HbvQPYKAp/"
+                      class="icon-box facebook"
+                      target="_blank"
+                    >
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="contact"
+              style="
+                background-color: #f9f9f9;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 800px;
+                margin: 0 auto;
+              "
+            >
+              <h2
+                class="h2"
+                style="
+                  text-align: center;
+                  font-size: 28px;
+                  color: #333;
+                  margin-bottom: 20px;
+                "
+              >
+                Get In Touch
+              </h2>
+
+              <div class="wrapper">
+                <p
+                  style="
+                    text-align: center;
+                    font-size: 16px;
+                    color: #555;
+                    margin-bottom: 30px;
+                  "
+                >
+                  Have any questions or want to collaborate? Reach out to us and
+                  we'll get back to you as soon as possible.
+                </p>
+
+                <!-- Contact Information -->
+                <div
+                  class="contact-info"
+                  style="text-align: center; margin-bottom: 30px"
+                >
+                  <p style="font-size: 16px; margin: 5px 0">
+                    <strong>Email:</strong>
+                    <a
+                      href="mailto:satyamsingh57793@gmail.com"
+                      style="color: #0066cc; text-decoration: none"
+                      >satyamsingh57793@gmail.com</a
+                    >
+                  </p>
+                  <p style="font-size: 16px; margin: 5px 0">
+                    <strong>Contact:</strong>
+                    <a
+                      href="tel:+917808719803"
+                      style="color: #0066cc; text-decoration: none"
+                      >7808719803</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--
+    - #FOOTER
+    -->
+    <footer>
+      <div class="container">
+        <div class="wrapper">
+          <a href="#" class="footer-logo">
+            <img
+              src="./assets/images/IMG_1580x.jpg"
+              alt="DevBlog's Logo"
+              width="150"
+              height="70"
+              class="logo-light"
+            />
+            <img
+              src="./assets/images/IMG_1580 png.png"
+              alt="DevBlog's Logo"
+              width="150"
+              height="70"
+              class="logo-dark"
+            />
+          </a>
+
+          <p class="footer-text">
+            Learn about Web accessibility, Web performance, and Database
+            management.
+          </p>
+        </div>
+
+        <div class="wrapper">
+          <p class="footer-title">Quick Links</p>
+
+          <ul>
+            <li>
+              <a href="#" class="footer-link">Advertise with us</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About Us</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link" id="footerContactLink">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="wrapper">
+          <p class="footer-title">Legal Stuff</p>
+
+          <ul>
+            <li>
+              <a href="#" class="footer-link">Privacy Notice</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Cookie Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms Of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="copyright">
+        &copy; Copyright 2025 <a href="#">SSR Universe Flims</a>
+      </p>
+    </footer>
+
+    <!--
+    - custom js link
+    -->
+    <script src="./assets/js/script.min.js"></script>
+
+    <!--
+    - ionicon link
+    -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    
+    <script>
+      // Modal functionality
+      const contactModal = document.getElementById('contactModal');
+      const contactLink = document.getElementById('contactLink');
+      const mobileContactLink = document.getElementById('mobileContactLink');
+      const heroContactLink = document.getElementById('heroContactLink');
+      const footerContactLink = document.getElementById('footerContactLink');
+      const closeModal = document.getElementById('closeModal');
+      const modalContactForm = document.getElementById('modalContactForm');
+      
+      // Function to open modal
+      function openModal() {
+        contactModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      }
+      
+      // Function to close modal
+      function closeModalFunc() {
+        contactModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }
+      
+      // Event listeners for all contact links
+      contactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+      
+      mobileContactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+      
+      heroContactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+      
+      footerContactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+      
+      closeModal.addEventListener('click', closeModalFunc);
+      
+      // Close modal when clicking outside the content
+      contactModal.addEventListener('click', function(e) {
+        if (e.target === contactModal) {
+          closeModalFunc();
+        }
+      });
+      
+      // Form submission using mailto
+      modalContactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('modalName').value;
+        const email = document.getElementById('modalEmail').value;
+        const phone = document.getElementById('modalNumber').value;
+        const message = document.getElementById('modalMessage').value;
+        
+        // Create mailto link
+        const subject = `New Contact Form Submission from ${name}`;
+        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AMessage: ${message}`;
+        const mailtoLink = `mailto:sadhnakumari55555@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        alert('Your message has been prepared in your email client. Please send it to contact us.');
+        
+        // Reset form and close modal
+        modalContactForm.reset();
+        closeModalFunc();
+      });
+    </script>
+  </body>
+</html>
